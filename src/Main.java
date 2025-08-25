@@ -4,15 +4,12 @@ public class Main {
 
         System.out.println("Задание 1");
         byte clientOS = 1;
-        switch (clientOS) {
-            case 0:
-                System.out.println("Установите версию приложения для iOS по ссылке");
-                break;
-            case 1:
-                System.out.println("Установите версию приложения для Android по ссылке");
-                break;
-            default:
-                System.out.println("Не можем определить вашу операционную систему");
+        if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else {
+            System.out.println("Не можем определить вашу операционную систему");
         }
 
         System.out.println("Задание 2");
@@ -42,17 +39,13 @@ public class Main {
 
         System.out.println("Задание 4");
         short deliveryDistance = 95;
-        boolean oneDayDelivery = deliveryDistance < 20;
-        boolean twoDayDelivery = deliveryDistance >= 20 && deliveryDistance < 60;
-        boolean threeDayDelivery = deliveryDistance >= 60 && deliveryDistance <= 100;
-        boolean noDelivery = deliveryDistance > 100;
-        if (oneDayDelivery) {
+        if (deliveryDistance < 20) {
             System.out.println("Потребуется дней для доставки: 1");
-        } else if (twoDayDelivery) {
+        } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
             System.out.println("Потребуется дней для доставки: 2");
-        } else if (threeDayDelivery) {
+        } else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
             System.out.println("Потребуется дней для доставки: 3");
-        } else if (noDelivery) {
+        } else if (deliveryDistance > 100) {
             System.out.println("На такое расстояние доставка недоступна");
         }
 
